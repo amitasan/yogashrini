@@ -1,0 +1,171 @@
+/* ----------------------------------------------------
+   THEME VARIABLES (fallbacks)
+---------------------------------------------------- */
+:root {
+  --bg: #fffef9;
+  --text: #222;
+  --heading: #b71c1c;
+  --accent: #ee0b6d;
+  --card-bg: #ffffff;
+  --card-border: #e6eefb;
+  --card-shadow: rgba(0,0,0,0.08);
+  --table-head-bg: #f4f4f4;
+  --table-text: #444;
+}
+
+/* DARK THEME OVERRIDES */
+body[data-theme="dark"] {
+  --bg: #121212;
+  --text: #e8e8e8;
+  --heading: #ff8a80;
+  --accent: #ff8a80;
+  --card-bg: #161717;
+  --card-border: #2a2d2e;
+  --card-shadow: rgba(0,0,0,0.5);
+  --table-head-bg: #1f1f1f;
+  --table-text: #bdbdbd;
+}
+
+/* ----------------------------------------------------
+   CONTACT PAGE CONTAINER
+---------------------------------------------------- */
+.contact-container {
+  margin-left: 0;
+  padding: 40px 60px;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* Heading */
+.contact-container h1 {
+  color: var(--heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Section titles */
+.center-section h2,
+.map-section h2 {
+  margin: 40px 0 15px;
+  font-size: 1.6rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ----------------------------------------------------
+   TABLE WRAPPER
+---------------------------------------------------- */
+.contact-table,
+.center-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px var(--card-shadow);
+}
+
+/* Table cells */
+.contact-table th,
+.center-table th,
+.contact-table td,
+.center-table td {
+  border-bottom: 1px solid var(--card-border);
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+/* Table header styling */
+.contact-table th {
+  background-color: var(--accent);
+  color: #fff;
+  width: 200px;
+  font-weight: 600;
+}
+
+.center-table th {
+  background-color: var(--table-head-bg);
+  color: var(--table-text);
+}
+
+/* Row text */
+.center-table td,
+.contact-table td {
+  background: var(--card-bg);
+  transition: background 0.25s ease;
+}
+
+/* Upcoming centers special styling */
+.center-table.upcoming td:last-child {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Hover highlight */
+.center-table tr:hover td,
+.contact-table tr:hover td {
+  background-color: rgba(0,0,0,0.03);
+}
+
+body[data-theme="dark"] .center-table tr:hover td,
+body[data-theme="dark"] .contact-table tr:hover td {
+  background-color: rgba(255,255,255,0.06);
+}
+
+/* ----------------------------------------------------
+   MAP STYLING
+---------------------------------------------------- */
+iframe {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px var(--card-shadow);
+  margin-top: 10px;
+  background: var(--card-bg);
+}
+
+/* ----------------------------------------------------
+   ACCESSIBILITY
+---------------------------------------------------- */
+
+/* Keyboard focus */
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE
+---------------------------------------------------- */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 20px;
+  }
+
+  .contact-table th,
+  .center-table th,
+  .contact-table td,
+  .center-table td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .contact-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .center-section h2 {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,499 @@
+/* Retreat.css - Theme-aware, accessible, responsive */
+
+/* Fallback theme variables */
+:root {
+  --bg: #fefefe;
+  --card-bg: #ffffff;
+  --card-border: #e6eefb;
+  --card-shadow: rgba(0,0,0,0.06);
+  --text: #222;
+  --muted: #556;
+  --accent: #ee0b6d;
+  --accent-2: #b71c1c;
+  --pill-bg: #f1f5f9;
+}
+
+/* Dark theme overrides */
+body[data-theme="dark"] {
+  --bg: #0f1112;
+  --card-bg: #161718;
+  --card-border: #2a2c2d;
+  --card-shadow: rgba(0,0,0,0.6);
+  --text: #e7e7e7;
+  --muted: #bdbdbd;
+  --accent: #ff8a80;
+  --accent-2: #ff6f61;
+  --pill-bg: #1b1b1c;
+}
+
+/* Page layout */
+.retreat-page {
+  background: var(--bg);
+  min-height: 100vh;
+  padding-bottom: 48px;
+  transition: background 0.25s ease, color 0.25s ease;
+  color: var(--text);
+}
+
+/* Hero */
+.retreat-hero {
+  padding: 28px 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(245,250,255,0.6));
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  margin-bottom: 18px;
+}
+body[data-theme="dark"] .retreat-hero {
+  background: linear-gradient(135deg, rgba(18,18,18,0.6), rgba(28,28,28,0.6));
+}
+.retreat-hero-inner {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+.retreat-hero h1 { margin: 0; font-size: 2rem; color: var(--accent-2); }
+.retreat-hero .lead { margin-top: 8px; color: var(--muted); max-width: 700px; }
+
+/* React badge */
+.retreat-hero-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: var(--card-bg);
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 24px var(--card-shadow);
+  color: var(--accent);
+}
+.react-badge-svg { color: var(--accent); }
+
+/* Section head */
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 18px 0;
+}
+.section-head h2 { margin: 0; font-size: 1.4rem; color: var(--accent-2); }
+.section-head .muted { color: var(--muted); }
+
+/* Grid */
+.retreat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* Card */
+.retreat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px var(--card-shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.retreat-card:focus,
+.retreat-card:focus-within,
+.retreat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 46px rgba(0,0,0,0.08);
+  outline: none;
+}
+
+/* Card top */
+.retreat-card-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+}
+.retreat-card-top h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--accent-2);
+}
+.retreat-meta { display: flex; gap: 8px; align-items: center; }
+.pill {
+  background: var(--pill-bg);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border: 1px solid var(--card-border);
+}
+
+/* Body */
+.retreat-card-body { margin-top: 12px; flex: 1 1 auto; }
+.short-desc { margin: 0 0 10px 0; color: var(--text); }
+
+/* details */
+.retreat-details {
+  margin-top: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: transparent;
+}
+.details-summary {
+  cursor: pointer;
+  padding: 10px 12px;
+  font-weight: 600;
+  background: var(--card-bg);
+  color: var(--accent-2);
+  display: block;
+}
+.details-content { padding: 12px; background: var(--card-bg); }
+
+/* Table inside details */
+.retreat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.retreat-table th,
+.retreat-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--card-border);
+  text-align: left;
+  color: var(--text);
+}
+.retreat-table th {
+  width: 140px;
+  font-weight: 700;
+  color: var(--accent-2);
+}
+
+/* Footer */
+.retreat-card-footer {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-outline {
+  background: transparent;
+  border-color: var(--card-border);
+  color: var(--text);
+}
+
+/* center message */
+.center-message {
+  padding: 36px;
+  text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--card-shadow);
+}
+.center-message.error { border-color: #d9534f; color: #d9534f; }
+
+/* Responsive */
+@media (max-width: 992px) {
+  .retreat-grid { grid-template-columns: repeat(2, 1fr); }
+  .retreat-hero-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
+@media (max-width: 640px) {
+  .retreat-grid { grid-template-columns: 1fr; }
+  .retreat-hero h1 { font-size: 1.5rem; }
+  .retreat-hero .lead { font-size: 0.95rem; }
+  .retreat-card { padding: 12px; }
+}
+
+/* Focus visible for keyboard users */
+.retreat-card:focus-visible {
+  outline: 3px solid rgba(0,0,0,0.06);
+  outline-offset: 4px;
+}
+
+/* high-contrast mode support */
+@media (prefers-contrast: more) {
+  .retreat-card { box-shadow: none; border-width: 2px; }
+}
+
+
+/* ---------------------------
+   Enhanced styling for <details>
+   (put this after your existing Retreat.css)
+   --------------------------- */
+
+/* Make the native <details> block look like a card section */
+.retreat-details {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: linear-gradient(180deg, rgba(0,0,0,0.01), transparent);
+}
+
+/* Summary (the clickable row) */
+.details-summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 600;
+  background: var(--card-bg);
+  color: var(--accent-2);
+  user-select: none;
+  transition: background 0.18s ease, color 0.18s ease;
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* Caret icon (right-side) */
+.details-summary::after {
+  content: "▾";
+  display: inline-block;
+  transform-origin: 50% 50%;
+  transition: transform 0.22s ease;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Rotate caret when details is open */
+.retreat-details[open] .details-summary::after {
+  transform: rotate(-180deg);
+  color: var(--accent);
+}
+
+/* Focus styles for keyboard users */
+.details-summary:focus,
+.details-summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* Animated content area (smooth expand/collapse) */
+.details-content {
+  padding: 0 14px;
+  background: var(--card-bg);
+  color: var(--text);
+  overflow: hidden;
+  max-height: 0;                      /* collapsed */
+  opacity: 0;
+  transition: max-height 0.36s cubic-bezier(.2,.9,.2,1), opacity 0.24s ease, padding 0.18s ease;
+}
+
+/* When open: reveal */
+.retreat-details[open] .details-content {
+  padding: 12px 14px 16px 14px;
+  max-height: 1200px; /* large enough to accommodate content */
+  opacity: 1;
+}
+
+/* Make summary block keyboard-focusable (improves hit-target on mobile too) */
+.details-summary {
+  border-radius: 6px;
+}
+
+/* Table inside details — clearer spacing & stripes */
+.details-content .retreat-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  background: transparent;
+}
+.details-content .retreat-table th,
+.details-content .retreat-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--card-border);
+  text-align: left;
+  vertical-align: top;
+  color: var(--text);
+  font-size: 0.97rem;
+}
+.details-content .retreat-table tr:nth-child(odd) td {
+  background: rgba(0,0,0,0.01);
+}
+body[data-theme="dark"] .details-content .retreat-table tr:nth-child(odd) td {
+  background: rgba(255,255,255,0.01);
+}
+
+/* Table header style inside details */
+.details-content .retreat-table th {
+  color: var(--accent-2);
+  font-weight: 700;
+  background: transparent;
+}
+
+/* If there are long lines, let them wrap cleanly */
+.details-content .retreat-table td,
+.details-content .retreat-table th {
+  word-break: break-word;
+}
+
+/* Small-screen adjustments */
+@media (max-width: 640px) {
+  .details-summary { padding: 12px; font-size: 0.95rem; }
+  .details-content { padding: 10px 12px; }
+  .details-content .retreat-table th,
+  .details-content .retreat-table td {
+    padding: 8px 10px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Optional: make the summary clickable area more obvious on hover */
+.details-summary:hover {
+  background: color-mix(in srgb, var(--accent) 4%, transparent);
+}
+
+/* Accessibility: provide reduced-motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  .details-content,
+  .details-summary::after {
+    transition: none;
+  }
+  .details-content { max-height: none; opacity: 1; }
+}
+
+
+/* -----------------------
+  Details-area table polish
+  (put after existing Retreat.css)
+  ----------------------- */
+
+/* Base look for details tables */
+.details-content .retreat-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  background: transparent;
+  font-size: 0.97rem;
+  table-layout: auto; /* allow flexible column widths */
+}
+
+/* Caption style (if present) */
+.details-content .retreat-table caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--accent-2);
+}
+
+/* Head */
+.details-content .retreat-table thead th {
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 700;
+  color: var(--accent-2);
+  border-bottom: 1px solid var(--card-border);
+  background: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Body rows */
+.details-content .retreat-table tbody tr {
+  transition: background-color 0.12s ease;
+}
+
+.details-content .retreat-table tbody tr:nth-child(odd) td {
+  background: color-mix(in srgb, var(--card-bg) 96%, transparent);
+}
+body[data-theme="dark"] .details-content .retreat-table tbody tr:nth-child(odd) td {
+  background: color-mix(in srgb, var(--card-bg) 96%, transparent);
+}
+
+/* Cells */
+.details-content .retreat-table th,
+.details-content .retreat-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--card-border);
+  vertical-align: top;
+  color: var(--text);
+  word-break: break-word;
+}
+
+/* Label column style (if first column is labels) */
+.details-content .retreat-table th.label {
+  width: 28%;
+  min-width: 120px;
+  color: var(--accent-2);
+  font-weight: 700;
+  background: transparent;
+}
+
+/* Value column style */
+.details-content .retreat-table td.value {
+  width: 72%;
+}
+
+/* Hover state */
+.details-content .retreat-table tbody tr:hover td {
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+
+/* Small screens: convert table rows into stacked label–value blocks */
+@media (max-width: 720px) {
+  .details-content .retreat-table,
+  .details-content .retreat-table thead,
+  .details-content .retreat-table tbody,
+  .details-content .retreat-table th,
+  .details-content .retreat-table td,
+  .details-content .retreat-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .details-content .retreat-table thead { display: none; } /* hide header on narrow screens */
+
+  .details-content .retreat-table tr {
+    margin-bottom: 12px;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 10px;
+    background: var(--card-bg);
+  }
+
+  .details-content .retreat-table th.label,
+  .details-content .retreat-table td.value {
+    display: block;
+    width: 100%;
+    padding: 6px 8px;
+  }
+
+  .details-content .retreat-table th.label {
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .details-content .retreat-table td.value {
+    color: var(--text);
+  }
+}
+
+/* Accessibility: improve contrast for key cells */
+.details-content .retreat-table th.label,
+.details-content .retreat-table td.value strong {
+  color: var(--accent-2);
+}
+
+/* Reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  .details-content .retreat-table tbody tr,
+  .details-content .retreat-table tbody tr:hover {
+    transition: none;
+  }
+}

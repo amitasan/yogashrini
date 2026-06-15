@@ -1,0 +1,210 @@
+/* Posture.css — extends UserDashboard design tokens */
+
+/* ── Hero extras ─────────────────────────────────────────────────────────── */
+.posture-hero { padding: 36px 0; }
+
+.posture-hero-icon {
+  font-size: 5rem;
+  filter: drop-shadow(0 4px 12px rgba(255,45,111,0.25));
+}
+
+.posture-hero-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.posture-badge {
+  background: color-mix(in srgb, var(--yoga-primary, #FF2D6F) 12%, #fff);
+  color: var(--yoga-primary, #FF2D6F);
+  border: 1px solid color-mix(in srgb, var(--yoga-primary, #FF2D6F) 20%, transparent);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+body[data-theme="dark"] .posture-badge {
+  background: color-mix(in srgb, var(--yoga-primary, #FF2D6F) 10%, #000);
+}
+
+/* ── Drop-zone ───────────────────────────────────────────────────────────── */
+.posture-dropzone {
+  border: 2.5px dashed color-mix(in srgb, var(--yoga-primary, #FF2D6F) 40%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--yoga-primary, #FF2D6F) 4%, var(--card-bg, #fff));
+  cursor: pointer;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  overflow: hidden;
+  position: relative;
+}
+
+.posture-dropzone:hover,
+.posture-dropzone:focus-visible {
+  border-color: var(--yoga-primary, #FF2D6F);
+  background: color-mix(in srgb, var(--yoga-primary, #FF2D6F) 7%, var(--card-bg, #fff));
+  outline: none;
+}
+
+.dz-over {
+  border-color: var(--yoga-primary, #FF2D6F) !important;
+  background: color-mix(in srgb, var(--yoga-primary, #FF2D6F) 10%, var(--card-bg, #fff)) !important;
+  transform: scale(1.01);
+}
+
+.dz-loading { cursor: default; }
+
+/* Placeholder */
+.dz-placeholder { text-align: center; padding: 2rem 1rem; }
+.dz-icon        { font-size: 3rem; margin-bottom: 0.5rem; }
+.dz-text        { font-size: 1rem; color: var(--text-color); }
+.dz-link        { color: var(--yoga-primary, #FF2D6F); font-weight: 600; text-decoration: underline; }
+
+/* Preview */
+.dz-preview-wrap    { position: relative; width: 100%; }
+.dz-preview-img     { display: block; width: 100%; height: auto; max-height: 420px; object-fit: contain; border-radius: 12px; }
+.dz-sending-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 12px;
+  border-radius: 12px;
+  color: #fff; font-weight: 600;
+}
+
+/* ── Spinners ────────────────────────────────────────────────────────────── */
+.posture-spinner {
+  width: 40px; height: 40px;
+  border: 4px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: posture-spin 0.75s linear infinite;
+}
+
+.posture-spinner-sm {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: posture-spin 0.75s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+@keyframes posture-spin { to { transform: rotate(360deg); } }
+
+/* ── Status bar ──────────────────────────────────────────────────────────── */
+.posture-status {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-color);
+}
+.ps-ok      { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
+.ps-err     { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+.ps-loading { color: var(--yoga-primary, #FF2D6F); }
+
+body[data-theme="dark"] .ps-ok  { background: #064e3b; color: #6ee7b7; border-color: #065f46; }
+body[data-theme="dark"] .ps-err { background: #7f1d1d; color: #fca5a5; border-color: #991b1b; }
+
+/* ── Result body layout ──────────────────────────────────────────────────── */
+.posture-result-body {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .posture-result-body { grid-template-columns: 1fr; }
+}
+
+/* Annotated image */
+.posture-annotated-wrap { }
+.posture-annotated-img  { width: 100%; border-radius: 10px; border: 1px solid var(--card-border); }
+
+/* ── Prediction detail ───────────────────────────────────────────────────── */
+.posture-pred-label {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.posture-pred-score {
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.posture-conf-badge {
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+/* Confidence bar */
+.posture-conf-track {
+  height: 8px;
+  background: var(--card-border, #e5e7eb);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.posture-conf-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Top-5 ───────────────────────────────────────────────────────────────── */
+.posture-top5       { margin-top: 4px; }
+.posture-top5-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-color);
+  opacity: 0.6;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.posture-top5-row {
+  display: grid;
+  grid-template-columns: 22px 1fr 90px 52px;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  font-size: 0.84rem;
+  color: var(--text-color);
+  border-bottom: 1px solid color-mix(in srgb, var(--card-border) 50%, transparent);
+}
+
+.posture-top5-row:last-child { border-bottom: none; }
+.pt5-winner { font-weight: 700; color: var(--heading-color); }
+
+.pt5-rank  { color: var(--text-color); opacity: 0.5; font-size: 0.78rem; }
+.pt5-name  { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pt5-bar-wrap { height: 6px; background: var(--card-border, #e5e7eb); border-radius: 999px; overflow: hidden; }
+.pt5-bar       { height: 100%; border-radius: 999px; transition: width 0.5s ease; }
+.pt5-pct       { font-size: 0.8rem; font-weight: 600; text-align: right; }

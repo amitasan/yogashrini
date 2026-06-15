@@ -1,0 +1,279 @@
+/* -----------------------------------------------------
+   GLOBAL THEME VARIABLES
+----------------------------------------------------- */
+
+body[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #222;
+  --heading-color: #111;
+  --card-bg: #f9f9f9;
+  --card-border: #e5e5e5;
+  --section-bg: #f5faff;
+  --accent: #1976d2;      /* blue */
+}
+
+body[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e4e4e4;
+  --heading-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --card-border: #333;
+  --section-bg: #1a1a1a;
+  --accent: #90caf9;      /* light blue */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+/* -----------------------------------------------------
+   USER DASHBOARD MAIN LOGO
+----------------------------------------------------- */
+
+.container.ud {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  border: 3px solid var(--accent);
+  padding: 8px;
+  background: var(--section-bg);
+  transition: 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.03);
+}
+
+/* -----------------------------------------------------
+   SECTION STYLING
+----------------------------------------------------- */
+
+.about-section,
+.values-table-section,
+.offerings-section,
+.philosophy-section,
+.studio-section,
+.teacher-training-section,
+.teachers-section,
+.why-choose-section,
+.location-section,
+.testimonials-section,
+.events-section {
+  background: var(--section-bg);
+  padding: 40px;
+  border-radius: 14px;
+  margin: 30px auto;
+  max-width: 900px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* -----------------------------------------------------
+   HEADINGS
+----------------------------------------------------- */
+
+h1, h2, h3 {
+  color: var(--heading-color);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+/* -----------------------------------------------------
+   TEXT + LISTS
+----------------------------------------------------- */
+
+p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+/* -----------------------------------------------------
+   VALUES TABLE
+----------------------------------------------------- */
+
+.values-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.values-table th,
+.values-table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.values-table th {
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.values-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* -----------------------------------------------------
+   BLOCKQUOTES
+----------------------------------------------------- */
+
+blockquote {
+  border-left: 5px solid var(--accent);
+  padding-left: 15px;
+  font-style: italic;
+  opacity: 0.9;
+  margin: 15px 0;
+}
+
+/* -----------------------------------------------------
+   RESPONSIVE DESIGN
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .values-table-section,
+  .about-section,
+  .offerings-section,
+  .philosophy-section,
+  .teacher-training-section,
+  .teachers-section,
+  .why-choose-section,
+  .location-section,
+  .testimonials-section,
+  .events-section,
+  .studio-section {
+    padding: 25px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+}
+
+
+
+
+/* ===========================
+   THEME OVERRIDES — Yogashrini logo pink
+   Place this at the end of App.css (or import after other CSS)
+   Only changes colors to match the logo
+   =========================== */
+
+/* primary palette from the logo */
+:root {
+  --yoga-primary: #FF2D6F;   /* bright magenta (logo) */
+  --yoga-primary-700: #C2185B; /* darker magenta (for accents/hover) */
+  --yoga-pill: color-mix(in srgb, #FF2D6F 8%, white); /* subtle pill bg */
+}
+
+/* dark theme variants */
+body[data-theme="dark"] {
+  --yoga-primary: #FF5A8E;     /* slight brightening for dark bg */
+  --yoga-primary-700: #C2185B;
+  --yoga-pill: color-mix(in srgb, #FF2D6F 6%, black);
+}
+
+/* Map existing variables your app already uses to the logo colours.
+   These will override previous definitions when this file is loaded last. */
+:root,
+body[data-theme="light"] {
+  --accent: var(--yoga-primary);
+  --accent-2: var(--yoga-primary-700);
+  --nav-hover: var(--yoga-primary);
+  --link-color: var(--yoga-primary-700);
+  --pill-bg: var(--yoga-pill);
+  --chat-header: var(--yoga-primary);
+}
+
+/* dark mapping (ensure chat/nav and other components get matching hues) */
+body[data-theme="dark"] {
+  --accent: var(--yoga-primary);
+  --accent-2: var(--yoga-primary-700);
+  --nav-hover: var(--yoga-primary);
+  --link-color: var(--yoga-primary-700);
+  --pill-bg: var(--yoga-pill);
+  --chat-header: var(--yoga-primary);
+}
+
+/* Small specific tweaks so components using other variable names also pick the new color */
+:root, body[data-theme="light"] {
+  --nav-hover: var(--yoga-primary);
+  --chat-header: var(--yoga-primary);
+  --table-head-bg: color-mix(in srgb, var(--yoga-primary) 12%, #fff);
+}
+
+/* Make buttons & important UI elements use the logo color by default */
+button, .btn, a.btn, .btn-primary {
+  --btn-bg: var(--yoga-primary);
+  background-color: var(--yoga-primary) !important;
+  border-color: var(--yoga-primary) !important;
+  color: #fff !important;
+}
+
+button:hover, .btn:hover, a.btn:hover, .btn-primary:hover {
+  background-color: var(--yoga-primary-700) !important;
+  border-color: var(--yoga-primary-700) !important;
+}
+
+/* Chatbot header & floating button */
+.chatbot-btn, .chat-header, .send-btn {
+  background: var(--yoga-primary) !important;
+  color: #fff !important;
+  border-color: var(--yoga-primary) !important;
+}
+
+/* Navbar hover & brand border */
+.brand-logo { border-color: var(--yoga-primary) !important; }
+.nav-link:hover, .nav-link.active { color: var(--yoga-primary-700) !important; }
+
+/* Pill badges and small UI chips */
+.pill, .badge, .posture-actions .btn-outline-sm {
+  background: var(--pill-bg) !important;
+  border-color: color-mix(in srgb, var(--yoga-primary) 10%, transparent);
+  color: var(--yoga-primary-700);
+}
+
+/* Ensure table header accent uses the logo color where used */
+.values-table th, .contact-table th, .center-table th {
+  background-color: var(--yoga-primary) !important;
+  color: #fff !important;
+}
+
+/* small utility: focus outlines use the logo color */
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--yoga-primary) 24%, black) !important;
+  outline-offset: 3px;
+}
+
+/* Reduced-motion compatibility left unchanged */
+
+/* EOF — theme overrides for Yogashrini logo */

@@ -1,0 +1,131 @@
+/* Types.css — aligned with UserDashboard design system */
+
+/* ── Hero icon (shared with Posture) ─────────────────────────────────────── */
+.posture-hero-icon {
+  font-size: 4.5rem;
+  filter: drop-shadow(0 4px 12px rgba(255,45,111,0.2));
+  flex-shrink: 0;
+}
+
+/* ── Search bar ──────────────────────────────────────────────────────────── */
+.types-search-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.types-search-input {
+  flex: 1;
+  min-width: 240px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1.5px solid var(--card-border, #e5e5e5);
+  background: var(--card-bg, #fff);
+  color: var(--text-color, #222);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.types-search-input:focus {
+  border-color: var(--yoga-primary, #FF2D6F);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--yoga-primary, #FF2D6F) 15%, transparent);
+}
+
+.types-result-count {
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+/* ── Pose grid ───────────────────────────────────────────────────────────── */
+.types-pose-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 992px) { .types-pose-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 576px)  { .types-pose-grid { grid-template-columns: 1fr; } }
+
+/* ── Pose card ───────────────────────────────────────────────────────────── */
+.types-pose-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px !important;
+}
+
+/* Top: image + names */
+.types-card-top {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.types-img-wrap {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--yoga-primary, #FF2D6F) 5%, var(--card-bg, #f9f9f9));
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--card-border, #e5e5e5);
+}
+
+.types-pose-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.types-names { flex: 1; min-width: 0; }
+
+.types-english-name {
+  margin: 0 0 6px 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--heading-color, #111);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.types-sanskrit-pill {
+  display: inline-block;
+  background: color-mix(in srgb, var(--yoga-primary, #FF2D6F) 10%, transparent);
+  color: var(--yoga-primary, #FF2D6F);
+  border: 1px solid color-mix(in srgb, var(--yoga-primary, #FF2D6F) 20%, transparent);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  padding: 2px 10px;
+  font-weight: 500;
+}
+
+/* Footer buttons */
+.types-card-footer {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.types-detail-btn, .types-copy-btn {
+  font-size: 0.82rem !important;
+  padding: 6px 12px !important;
+}
+
+/* Details panel */
+.types-details-panel {
+  border-top: 1px solid var(--card-border, #e5e5e5);
+  padding-top: 12px;
+  animation: types-slide-in 0.2s ease;
+}
+
+@keyframes types-slide-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,52 @@
+/* Classes.css */
+
+.classes-container {
+  margin-left: 220px; /* sidebar width */
+  padding: 40px 60px;
+  background-color: #fdfdfd;
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+h1, h2 {
+  color: #b71c1c;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+th {
+  background-color: #ee0b6d;
+  color: white;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .classes-container {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  table, th, td {
+    font-size: 14px;
+  }
+}

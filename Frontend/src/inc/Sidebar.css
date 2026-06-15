@@ -1,0 +1,156 @@
+/* Sidebar.css */
+.sidebar {
+  background-color: #000;
+  color: white;
+  height: 100vh;
+  width: 220px;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar-title {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  padding: 12px 0;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s;
+}
+
+.sidebar-nav li:hover {
+  background-color: #222;
+}
+
+/* Sidebar.css */
+.sidebar {
+  background-color: #000;
+  color: white;
+  height: 100vh;
+  width: 220px;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+  padding: 20px 10px;
+}
+
+.sidebar-title {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  padding: 12px 0;
+  cursor: pointer;
+  font-size: 1.1em;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+/* Hide nav text when collapsed */
+.sidebar.collapsed .sidebar-nav,
+.sidebar.collapsed .sidebar-title {
+  display: none;
+}
+
+/* Collapse/Expand Button */
+.collapse-button {
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  transform: translateX(100%);
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1.1em;
+  z-index: 1000;
+}
+
+/* Style Link elements inside sidebar */
+.sidebar-nav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: block;
+  padding: 12px 0;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover effect for links */
+.sidebar-nav li a:hover {
+  background-color: #222;
+  transform: translateX(4px);
+}
+
+/* Optional: Add subtle underline on hover */
+.sidebar-nav li a:hover::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 2px;
+  background-color: #ee0b6d;
+  margin-top: 4px;
+  margin-left: 10px;
+}
+
+/* Reset default list styles */
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Unified button style for all sidebar links */
+.sidebar-nav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: block;
+  padding: 12px 0;
+  transition: background-color 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+
+/* Hover effect */
+.sidebar-nav li a:hover {
+  background-color: #222;
+  transform: translateX(4px);
+}
+
+/* Optional underline accent on hover */
+.sidebar-nav li a:hover::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 2px;
+  background-color: #ee0b6d;
+  margin-top: 4px;
+  margin-left: 10px;
+}
+

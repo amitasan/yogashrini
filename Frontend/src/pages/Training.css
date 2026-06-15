@@ -1,0 +1,240 @@
+/* -----------------------------------------
+   Theme-aware Training page styles
+   Uses CSS variables defined on body[data-theme]
+   (eg. --card-bg, --card-border, --accent, --text-color)
+   ----------------------------------------- */
+
+/* Fallbacks if theme variables are not defined globally */
+:root {
+  --card-bg: #ffffff;
+  --card-border: #e6eefb;
+  --card-shadow: rgba(0,0,0,0.06);
+  --text-color: #222;
+  --muted: #4f5b62;
+  --accent: #e63946;   /* primary accent */
+  --success: #1d3557;
+  --focus: rgba(230,57,70,0.18);
+}
+
+/* Dark theme overrides */
+body[data-theme="dark"] {
+  --card-bg: #161718;
+  --card-border: #2a2d2e;
+  --card-shadow: rgba(0,0,0,0.6);
+  --text-color: #e8e8e8;
+  --muted: #bdbdbd;
+  --accent: #ff8a80;   /* warm accent for dark */
+  --success: #90caf9;
+  --focus: rgba(144,202,249,0.12);
+}
+
+/* Page layout */
+.mainarea {
+  padding: 3rem 0;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Intro */
+.intro {
+  background: linear-gradient(135deg, rgba(241,250,255,0.9), rgba(232,245,253,0.9));
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 6px 18px var(--card-shadow);
+  color: var(--text-color);
+}
+
+body[data-theme="dark"] .intro {
+  background: linear-gradient(135deg, rgba(20,20,20,0.6), rgba(28,28,28,0.6));
+}
+
+/* Intro heading */
+.intro h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+.intro p {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 760px;
+  margin: 0.5rem auto 0;
+  line-height: 1.6;
+}
+
+/* Banner image (if used) */
+.ban {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  border: 3px solid var(--accent);
+}
+
+/* Training card */
+.training-item.card {
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px var(--card-shadow);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make each card keyboard-focusable visually distinct */
+.training-item.card[tabindex="0"],
+.training-item.card:focus-within,
+.training-item.card:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+  transform: translateY(-6px);
+  box-shadow: 0 14px 38px rgba(0,0,0,0.25);
+}
+
+/* Hover */
+.training-item.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* Card image */
+.training-item .card-img-top {
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--card-border);
+  background-color: #00000006;
+}
+
+/* Card body */
+.card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+}
+
+/* Title & price */
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+.card-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+/* Buttons group */
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.btn {
+  margin: 0.3rem 0.2rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+/* Primary & success theme aware */
+.btn-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  filter: brightness(0.95);
+  transform: translateY(-2px);
+}
+
+.btn-outline-success {
+  color: var(--text-color);
+  border: 2px solid var(--success);
+  background: transparent;
+}
+.btn-outline-success:hover,
+.btn-outline-success:focus {
+  background: var(--success);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Modal styling */
+.modal-content {
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.28);
+}
+.modal-title {
+  color: var(--text-color);
+  font-weight: 700;
+}
+.modal-body {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Buttons in modal */
+.modal-footer .btn-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+.modal-footer .btn-secondary {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  color: var(--text-color);
+}
+
+/* Accessibility: focus-visible for keyboard users */
+:focus { outline: none; }
+button:focus-visible, a:focus-visible {
+  box-shadow: 0 0 0 6px var(--focus);
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .training-item .card-img-top { height: 200px; }
+}
+@media (max-width: 768px) {
+  .ban { height: 220px; }
+  .card-body { text-align: center; }
+  .training-item .card-img-top { height: 200px; }
+  .btn { min-height: 44px; }
+}
+
+/* Small helper grey text */
+.small-muted {
+  color: var(--muted);
+}
+
+/* Image fallback style */
+img[alt="Product image"] {
+  background-color: #00000006;
+  object-fit: cover;
+}
+
+/* Ensure good contrast for price */
+.price-tag {
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+/* If prefers-contrast is more, strengthen outlines */
+@media (prefers-contrast: more) {
+  .training-item.card[tabindex="0"] { outline-width: 4px; }
+}
