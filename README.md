@@ -4,6 +4,19 @@ Yogashrini is a web application designed for yoga practice, featuring automated 
 
 ---
 
+### 🛠️ Tech Stack & Technologies
+
+![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![Python](https://img.shields.io/badge/Python_3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow_2.10-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap_5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Razorpay](https://img.shields.io/badge/Razorpay-02042B?style=for-the-badge&logo=razorpay&logoColor=008CFF)
+
+---
+
 ## Technical Stack
 
 | Component | Technologies Used |
@@ -57,33 +70,23 @@ flowchart TD
 
 ---
 
-## Team & Responsibilities
+## 👥 Contributors & Key Contributions
 
-| Contributor | Role | Key Contributions |
-| :--- | :--- | :--- |
-| **Anirban Sil** | Frontend & Database Engineer | Developed core React frontend components, posture evaluation interfaces, course players, and database seeding scripts for pose datasets. |
-| **Suryendu Das** | Frontend Engineer | Implemented user authentication flows, input validation with Formik and Yup, product shop UI, and Chart.js integration. |
-| **Abhiroop Mukherjee** | Backend Architect | Built the Express API server, developed the Python Flask microservice with EfficientNetB0 model integration, and implemented Razorpay verification. |
-| **Amitasan Das** | Marketing & Research | Conducted market research on yoga posture education, user flow requirements, course curricula design, and product placement strategy. |
-
----
-
-## Resume Bullet Points
-
-### Anirban Sil (Frontend & Database Engineer)
+### 🔹 [Anirban Sil](https://github.com/Anirban-Sil) — *Frontend & Database Engineer*
 - Designed and built user interface components using React 19, React Router v7, and Bootstrap for posture evaluation, video streaming, and dashboards.
-- Developed database ingestion scripts to structure and populate dataset entries for 47 yoga pose categories and course structures.
+- Developed core posture evaluation interfaces, interactive course player modules, and administrative components.
+- Engineered database ingestion scripts to structure and populate dataset entries for 47 yoga pose categories and course structures.
 
-### Suryendu Das (Frontend Engineer)
-- Implemented client-side form handling and validation using Formik and Yup across authentication and booking workflows.
-- Integrated Chart.js analytics for user progress tracking and built product catalog views for the e-commerce store.
-
-### Abhiroop Mukherjee (Backend Architect)
+### 🔹 [Abhiroop Mukherjee](https://github.com/Abhiroop001) — *Backend Architect*
 - Engineered a dual-backend architecture using Express.js for REST services and Python Flask for deep learning inference.
 - Fine-tuned an EfficientNetB0 model on 47 posture classes achieving 84.96% validation accuracy with automated image annotation pipelines.
 - Integrated Razorpay payment API with server-side HMAC SHA256 signature verification.
 
-### Amitasan Das (Marketing & Research)
+### 🔹 [Suryendu Das](https://github.com/Suryendu-Das) — *Frontend Engineer*
+- Implemented client-side form handling and validation using Formik and Yup across authentication and booking workflows.
+- Integrated Chart.js analytics for user progress tracking and built product catalog views for the e-commerce store.
+
+### 🔹 [Amitasan Das](https://github.com/Amitasan-Das) — *Marketing & Research*
 - Executed domain research to define posture categorization schemas, course structures, and target user personas.
 - Developed product strategy and marketing frameworks to align application features with user requirements.
 
