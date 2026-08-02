@@ -82,7 +82,7 @@ flowchart TD
 - Fine-tuned an EfficientNetB0 model on 47 posture classes achieving 84.96% validation accuracy with automated image annotation pipelines.
 - Integrated Razorpay payment API with server-side HMAC SHA256 signature verification.
 
-### 🔹 [Suryendu Das](https://github.com/Suryendu-Das) — *Frontend Engineer*
+### 🔹 [Suryendu Das](https://github.com/suryendudas) — *Frontend Engineer*
 - Implemented client-side form handling and validation using Formik and Yup across authentication and booking workflows.
 - Integrated Chart.js analytics for user progress tracking and built product catalog views for the e-commerce store.
 
