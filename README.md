@@ -87,7 +87,7 @@ flowchart TD
 - Integrated Chart.js analytics for user progress tracking and built product catalog views for the e-commerce store.
 
 ### 🔹 [Amitasan Das](https://github.com/amitasan) — *Marketing & Research*
-- Executed domain research to define posture categorization schemas, course structures, and target user personas.
+- Executed the domain research to define posture categorization schemas, course structures, and target user personas.
 - Developed product strategy and marketing frameworks to align application features with user requirements.
 
 ---
